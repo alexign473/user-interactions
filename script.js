@@ -1,10 +1,17 @@
-const $menuBtn = document.querySelector('.menu-btn');
 const $menu = document.querySelector('.menu');
+const $menuBtn = document.querySelector('.menu-btn');
+const $closeBtn = document.querySelector('.closebtn');
 
-$menuBtn.addEventListener('click', () => {
-  $menu.classList.toggle('active');
+// MENU
+$closeBtn.addEventListener('click', () => {
+  $menu.classList.remove('open');
 });
 
+$menuBtn.addEventListener('click', () => {
+  $menu.classList.toggle('open');
+});
+
+// DROPDOWNS
 function hideDropdowns() {
   const $lists = document.querySelectorAll('.dropdown-list');
   $lists.forEach((list) => list.classList.remove('open'));

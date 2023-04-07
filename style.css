@@ -10,6 +10,7 @@ ul {
 
 body {
   font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  margin: 0;
 }
 
 header {
@@ -18,6 +19,7 @@ header {
   justify-content: space-between;
 }
 
+/* Menu */
 .menu-btn {
   font-size: 2rem;
   cursor: pointer;
@@ -25,20 +27,40 @@ header {
 
 .menu {
   display: none;
+  position: fixed;
+  top: 0;
+  right: 0;
+  z-index: 1;
+  width: 100%;
+  max-width: 400px;
+  height: 100%;
+  background-color: #111;
+  text-align: right;
+  overflow-x: hidden;
+  padding-top: 80px;
 }
 
 .menu a {
+  padding: 8px 32px 8px 8px;
   text-decoration: none;
-  color: inherit;
+  font-size: 25px;
+  color: #818181;
+  display: block;
+  transition: 0.3s;
 }
 
 .menu a:hover {
   background-color: lightgray;
+  color: #111;
 }
 
-.menu.active {
-  display: block;
-  position: relative;
+.closebtn {
+  position: absolute;
+  top: 4px;
+  right: 24px;
+  font-size: 3rem;
+  color: #818181;
+  cursor: pointer;
 }
 
 /* Dropdown */
