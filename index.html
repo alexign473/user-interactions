@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>User Interactions</title>
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css"
+    />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <header>
+      <div class="logo">Brand</div>
+      <div class="menu-btn">
+        <i class="fa-solid fa-bars"></i>
+      </div>
+    </header>
+    <div class="menu">
+      <ul class="menu-list">
+        <li><a href="#">Home</a></li>
+        <li><a href="#">Profile</a></li>
+        <li><a href="#">Gallery</a></li>
+        <li><a href="#">About</a></li>
+      </ul>
+    </div>
+    <main>
+      <div class="dropdown">
+        <button data-dropdown class="drop-btn">
+          Dropdown <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-list open">
+          <a href="#">Copy</a>
+          <a href="#">Edit</a>
+          <a href="#">Link 1</a>
+        </div>
+      </div>
+
+      <div class="dropdown">
+        <button data-dropdown class="drop-btn">
+          Dropdown 2 <i class="fa fa-caret-down"></i>
+        </button>
+        <div class="dropdown-list">
+          Lorem ipsum dolor sit amet consectetur adipisicing elit. Harum neque
+          deserunt, reprehenderit enim ducimus repudiandae.
+        </div>
+      </div>
+    </main>
+  </body>
+</html>

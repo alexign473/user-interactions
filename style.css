@@ -1,0 +1,95 @@
+* {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+body {
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+}
+
+header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.menu-btn {
+  font-size: 2rem;
+  cursor: pointer;
+}
+
+.menu {
+  display: none;
+}
+
+.menu a {
+  text-decoration: none;
+  color: inherit;
+}
+
+.menu a:hover {
+  background-color: lightgray;
+}
+
+.menu.active {
+  display: block;
+  position: relative;
+}
+
+/* Dropdown */
+.dropdown {
+  position: relative;
+  display: inline-block;
+}
+
+.drop-btn {
+  background-color: #2563eb;
+  color: #fff;
+  padding: 16px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.drop-btn:hover,
+.drop-btn:focus {
+  background-color: #1e40af;
+}
+
+.drop-btn i {
+  pointer-events: none;
+}
+
+.dropdown-list {
+  display: none;
+  position: absolute;
+  background-color: #fff;
+  min-width: 140px;
+  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.2);
+  z-index: 1;
+}
+
+.dropdown-list a {
+  display: block;
+  padding: 12px;
+  color: inherit;
+  text-decoration: none;
+}
+
+.dropdown-list a:hover {
+  background-color: #ddd;
+}
+
+.hidden {
+  display: none;
+}
+
+.open {
+  display: block;
+}
