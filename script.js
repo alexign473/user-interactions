@@ -70,8 +70,17 @@ const updateDots = ($currentDot, $targetDot) => {
   $targetDot.classList.add('current-slide');
 };
 
-// On click prev, move slides to left
-$prevBtn.addEventListener('click', (e) => {
+const nextSlide = () => {
+  const $currentSlide = $track.querySelector('.current-slide');
+  const $nextSlide = $currentSlide.nextElementSibling || slides[0];
+  const $currentDot = $dotsNav.querySelector('.current-slide');
+  const $nextDot = $currentDot.nextElementSibling || dots[0];
+  // move to next slide
+  moveToSlide($track, $currentSlide, $nextSlide);
+  updateDots($currentDot, $nextDot);
+};
+
+const prevSlide = () => {
   const $currentSlide = $track.querySelector('.current-slide');
   const $prevSlide =
     $currentSlide.previousElementSibling || slides[slides.length - 1];
@@ -80,17 +89,20 @@ $prevBtn.addEventListener('click', (e) => {
   // move to prev slide
   moveToSlide($track, $currentSlide, $prevSlide);
   updateDots($currentDot, $prevDot);
+};
+
+// On click prev, move slides to left
+$prevBtn.addEventListener('click', () => {
+  prevSlide();
+  clearInterval(timer);
+  setTimer();
 });
 
 // On click next, move slides to right
-$nextBtn.addEventListener('click', (e) => {
-  const $currentSlide = $track.querySelector('.current-slide');
-  const $nextSlide = $currentSlide.nextElementSibling || slides[0];
-  const $currentDot = $dotsNav.querySelector('.current-slide');
-  const $nextDot = $currentDot.nextElementSibling || dots[0];
-  // move to next slide
-  moveToSlide($track, $currentSlide, $nextSlide);
-  updateDots($currentDot, $nextDot);
+$nextBtn.addEventListener('click', () => {
+  nextSlide();
+  clearInterval(timer);
+  setTimer();
 });
 
 // On click nav dot, move to that slide
@@ -104,4 +116,15 @@ $dotsNav.addEventListener('click', (e) => {
   const $targetSlide = slides[targetIndex];
   moveToSlide($track, $currentSlide, $targetSlide);
   updateDots($currentDot, $targetDot);
+  clearInterval(timer);
+  setTimer();
 });
+
+// Slides interval
+let timer;
+
+function setTimer() {
+  timer = setInterval(nextSlide, 3000);
+}
+
+setTimer();
